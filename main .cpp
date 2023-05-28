@@ -24,6 +24,16 @@ int fibo_r (int x){
   }
 }
 
+int fpb(int m, int n){
+  if (m == 0){
+    return n;
+  }else if (m < n){
+    return fpb(n,m);
+  }else{
+    return fpb(m%n,n);
+  }
+}
+
 int main(int argc, char const *argv[])
 {
   int fac;
@@ -37,5 +47,15 @@ int main(int argc, char const *argv[])
   cin >> fib;
   cout << "Hasil : ";
   cout << fibo_r(fib);
+
+  int pertama;
+  int kedua;
+  cout << "\n\nMencari FPB" << endl;
+  cout << "Masukkan angka pertama : ";
+  cin >> pertama;
+  cout << "Masukkan angka kedua : ";
+  cin >> kedua;
+  cout << "Maka FPB dari kedua bilangan tersebut adalah : ";
+  cout << fpb(pertama, kedua);
   return 0;
 }
